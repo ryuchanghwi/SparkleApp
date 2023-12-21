@@ -20,7 +20,7 @@
   
 # Architecture
 ## MVC -> MVVM + Clean Architecture(진행 중)
-- 잦은 기획 변경 및 유지보수 등 업무 효율을 높이기 위해 클린 아키텍처를 도입중입니다.
+- 잦은 기획 변경 및 유지보수 등 업무 효율을 높이기 위해 `클린 아키텍처`를 도입중입니다.
 <img width="1152" src="">
 
 ## Domain
@@ -33,7 +33,7 @@
 
 ## Presentation
 > View
-- 기존 MVC 패턴 시 UIViewController의 loadView 생명주기에 UIView를 바꿔주어 ViewController의 레이아웃 코드를 최소화하고자 했습니다.
+- 기존 MVC 패턴 시 UIViewController의 `loadView` 생명주기에 UIView를 바꿔주어 ViewController의 레이아웃 코드를 최소화하고자 했습니다.
 ``` swift
     // MARK: - Life Cycle
     override func loadView() {
@@ -58,7 +58,8 @@
     }
 ```
 > ViewModel
-- SwiftUI와 UIKit에 모두 비동기프로그래밍을 적용하고자 Combine을 학습 중입니다. 
+- SwiftUI와 UIKit에 모두 비동기프로그래밍을 적용하고자 `Combine`을 학습 중입니다.
+- UIKit의 ViewModel은 `Input/Output Modeling`을 통해 View로부터 전달된 이벤트는 Input, View로 전달할 데이터는 Output을 통해 Binding합니다.
 > ItemViewData
 - Entity를 View에서 쉽게 사용하기 위한 데이터로 변환하는 작업을 수행합니다.
 ``` swift
