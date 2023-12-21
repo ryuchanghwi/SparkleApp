@@ -58,7 +58,7 @@
     }
 ```
 > ViewModel
-- ㅇ
+- SwiftUI와 UIKit에 모두 비동기프로그래밍을 적용하고자 Combine을 학습 중입니다. 
 > ItemViewData
 - Entity를 View에서 쉽게 사용하기 위한 데이터로 변환하는 작업을 수행합니다.
 ``` swift
