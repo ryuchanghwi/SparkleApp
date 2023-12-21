@@ -45,6 +45,8 @@
 
 # Trouble Shooting
 
+# 주요 화면 및 기능
+
 # Commit message
 
 ```swift
