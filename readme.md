@@ -10,7 +10,7 @@
 <img src="https://github.com/ryuchanghwi/swiftAlgorithim/assets/78063938/72d6e048-adea-4e08-9f1b-96735acdcfd4" width=150></img>&nbsp;&nbsp;<img src="https://github.com/ryuchanghwi/swiftAlgorithim/assets/78063938/0f823165-d0ac-4764-9d2a-7c5d94397974" width=150></img>&nbsp;&nbsp;<img src="https://github.com/ryuchanghwi/swiftAlgorithim/assets/78063938/01f09ef6-94b3-499d-a201-c35003988225" width=150></img>&nbsp;&nbsp;<img src="https://github.com/ryuchanghwi/swiftAlgorithim/assets/78063938/c167a1b6-3b9f-46a5-a8eb-be59614469ac" width=150></img>&nbsp;&nbsp;<img src="https://github.com/ryuchanghwi/swiftAlgorithim/assets/78063938/74bebcea-5770-43bc-adca-52b69c8e583b" width=150></img>
 
 - 진행 기간
-    - 개발 : 2023.07 ~ 2023.12
+    - 개발 : 2023.07 ~ 2023.12(진행중)
 - 출시
     - 1.0.0 : 2023.12.11
     - 1.0.1 : 2023.12.22(타이머, 로그인 수정)
