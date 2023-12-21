@@ -60,6 +60,26 @@
 > ViewModel
 - SwiftUI와 UIKit에 모두 비동기프로그래밍을 적용하고자 `Combine`을 학습 중입니다.
 - UIKit의 ViewModel은 `Input/Output Modeling`을 통해 View로부터 전달된 이벤트는 Input, View로 전달할 데이터는 Output을 통해 Binding합니다.
+``` swift
+struct BattleHistoryDetailViewModel {
+    struct Input {
+        let viewLoad: AnyPublisher<BattleHistoryResultDTO, Never>
+    }
+    struct Output {
+        let historyDetailData: AnyPublisher<BattleHistoryDetailItemViewData, Never>
+    }
+    func transform(input: Input) -> Output {
+        let historyData = input.viewLoad.map {
+            return BattleHistoryDetailItemViewData(battleHistoryItem: $0)
+        }.eraseToAnyPublisher()
+        return Output(historyDetailData: historyData)
+    }
+}
+```
+- SwiftUI의 ViewModel은 `ObservableObject`와 `@Published`프로퍼티 패터를 활용해 Binding합니다.
+``` swift
+
+```
 > ItemViewData
 - Entity를 View에서 쉽게 사용하기 위한 데이터로 변환하는 작업을 수행합니다.
 ``` swift
