@@ -33,7 +33,30 @@
 
 ## Presentation
 > View
-- ㅇ
+- 기존 MVC 패턴 시 UIViewController의 loadView 생명주기에 UIView를 바꿔주어 ViewController의 레이아웃 코드를 최소화하고자 했습니다.
+``` swift
+    // MARK: - Life Cycle
+    override func loadView() {
+        super.loadView()
+        historyView = HistoryView(frame: self.view.frame)
+        self.view = historyView
+    }
+```
+- 현재는 UIHostingController를 사용해 SwiftUI로 UI를 구성하고 있습니다.
+``` swift
+    // MARK: - Setting
+    override func setConfig() {
+        battleHistoryHostingController = UIHostingController(rootView: BattleProgressView(data: battleHistoryViewData))
+        self.addChild(battleHistoryHostingController)
+        view.addSubview(battleHistoryHostingController.view)
+        battleHistoryHostingController.didMove(toParent: self)
+    }
+    override func setLayout() {
+        battleHistoryHostingController.view.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+    }
+```
 > ViewModel
 - ㅇ
 > ItemViewData
