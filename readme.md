@@ -76,7 +76,7 @@ struct BattleHistoryDetailViewModel {
     }
 }
 ```
-- SwiftUI의 ViewModel은 `ObservableObject`와 `@Published`프로퍼티 패터를 활용해 Binding합니다.
+- SwiftUI의 ViewModel은 `ObservableObject`와 `@Published`프로퍼티 패턴를 활용해 Binding합니다.
 ``` swift
 
 ```
