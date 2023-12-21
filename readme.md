@@ -1,6 +1,6 @@
 
 
-# 프로젝트 설명
+# 프로젝트 소개
 - 연인 간 미션 승부를 통한 소원권 내기 서비스 앱
 
 🔗 [앱 다운로드 링크](https://apps.apple.com/kr/app/sparkle-%EC%8A%A4%ED%8C%8C%ED%81%B4-%EC%97%B0%EC%95%A0%EC%97%90-%EC%83%88%EB%A1%9C%EC%9A%B4-%EC%A7%9C%EB%A6%BF%ED%95%A8%EC%9D%B4-%ED%95%84%EC%9A%94%ED%95%A0%EB%95%8C/id6451497605)
