@@ -60,7 +60,32 @@
 > ViewModel
 - ㅇ
 > ItemViewData
-- ㅇ
+- Entity를 View에서 쉽게 사용하기 위한 데이터로 변환하는 작업을 수행합니다.
+``` swift
+struct BattleHistoryItemViewData {
+    let date: String
+    let gameTitle: String
+    let imagePath: URL?
+    let result: String
+    let battleHistoryItem: BattleHistoryResultDTO
+    init(battleHistoryItem: BattleHistoryResultDTO) {
+        self.battleHistoryItem = battleHistoryItem
+        self.date = battleHistoryItem.date ?? ""
+        self.gameTitle = battleHistoryItem.title ?? ""
+        self.imagePath = URL(string: battleHistoryItem.image ?? "")
+        switch battleHistoryItem.result {
+        case "DRAW":
+            self.result = "무승부"
+        case "WIN":
+            self.result = "승리"
+        case "LOSE":
+            self.result = "패배"
+        default:
+            self.result = battleHistoryItem.result ?? ""
+        }
+    }
+}
+```
 
 ## Data
 > Repository
