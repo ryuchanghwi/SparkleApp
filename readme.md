@@ -17,6 +17,32 @@
 - 기술 스택
     - iOS : UIKit, SwiftUI, Combine, SwiftLint 
     - Deployment Target : iOS 15.0
+  
+# Architecture
+## MVC -> MVVM + Clean Architecture(진행 중)
+- 잦은 기획 변경 및 유지보수 등 업무 효율을 높이기 위해 클린 아키텍처를 도입중입니다.
+<img width="1152" src="">
+
+## Domain
+> Entity
+- ㅇ
+> UseCase
+- ㅇ
+> Repository Interface
+- ㅇ
+
+## Presentation
+> View
+- ㅇ
+> ViewModel
+- ㅇ
+> ItemViewData
+- ㅇ
+
+## Data
+> Repository
+- ㅇ
+
 
 # commit message
 
