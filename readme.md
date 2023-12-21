@@ -15,13 +15,8 @@
     - 1.0.0 : 2023.12.11
     - 1.0.1 : 2023.12.22
 - 기술 스택
-    - 개발 환경 
-       - iOS : swift 5, xcode 13.4
-       - 서버 : Java 17, IntelliJ IDEA
-    - 라이브러리 
-       - iOS : RxSwift, Firebase, Realm, SwiftLint, Lottie 
-       - 서버 : Spring boot
-    - Deployment Target : iOS 14.0
+    - iOS : UIKit, SwiftUI, Combine, SwiftLint 
+    - Deployment Target : iOS 15.0
 
 # commit message
 
