@@ -43,8 +43,9 @@
 > Repository
 - ㅇ
 
+# Trouble Shooting
 
-# commit message
+# Commit message
 
 ```swift
 🔨[FIX] : 버그, 오류 해결
