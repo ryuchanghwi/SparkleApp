@@ -202,7 +202,15 @@ let _ = Self._printChanges()
   
 
 ### 2. UIKit에서 SwiftUI를 사용할 때 주의할 점
+### 문제점
+SwiftUI를 사용하면서 간헐적으로 화면이 나타나지 않는 문제 발생
 
+<img src="https://github.com/ryuchanghwi/SparkleApp/assets/78063938/4bb2dcc3-ea80-42dc-b5d3-f82e04addc8c" width=200></img>&nbsp;&nbsp;
+
+
+
+
+### 해결 방안
 # 주요 화면 및 기능
 
 # Commit message
