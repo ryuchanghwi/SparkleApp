@@ -56,8 +56,26 @@ final class BattleHistoryResultUseCase: BattleHistoryResultUseCaseProtocol {
 }
 ```
 > Repository Interface
-- ㅇ
-
+- 클린 아키텍처 다이어그램의 더 안쪽에 위치한 Domain 영역이 Data 영역의 Repository에 접근하기 위해 `의존성 역전`를 통해 레퍼지토리에 접근하기 위한 방법을 제공합니다.
+``` swift
+protocol RoundBattleMissionRepositoryInterface {
+    func data(roundId: Int) -> AnyPublisher<RoundBattleMissionDTO, ErrorType>
+}
+```
+## Data
+> Repository
+- 데이터를 직접적으로 획득합니다. 데이터를 획득하는 방법을 확장성있도록 하기 위해 사용됩니다.
+``` swift
+final class RoundBattleMissionRepository: RoundBattleMissionRepositoryInterface {
+    private let service: GetServiceCombine
+    init(service: GetServiceCombine) {
+        self.service = service
+    }
+    func data(roundId: Int) -> AnyPublisher<RoundBattleMissionDTO, ErrorType> {
+        self.service.getService(from: Config.baseURL + "api/game/short/\(roundId)", isUseHeader: true)
+    }
+}
+```
 ## Presentation
 > View
 - 기존 MVC 패턴 시 UIViewController의 `loadView` 생명주기에 UIView를 바꿔주어 ViewController의 레이아웃 코드를 최소화하고자 했습니다.
