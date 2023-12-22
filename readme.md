@@ -153,10 +153,6 @@ struct BattleHistoryItemViewData {
 }
 ```
 
-## Data
-> Repository
-- ㅇ
-
 # Trouble Shooting
 
 # 주요 화면 및 기능
