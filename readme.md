@@ -154,13 +154,48 @@ struct BattleHistoryItemViewData {
 ```
 
 # ⚠️Trouble Shooting
-### [1.SwiftUI View의 성능 향상을 위한 종속성 최소화를 위한 고민](https://declan.tistory.com/89)
+### [1.SwiftUI View의 성능 향상을 위한 종속성 최소화](https://declan.tistory.com/89)
 ### 문제점
 SwiftUI를 사용하면서 화면이 매끄럽지 않게 느껴지는 경우를 종종 발견함. 이에 따라 SwiftUI의 성능 향상을 위한 고민의 필요성을 느낌
 ### 해결 방안
 두 가지 방법으로 해결하고자 했습니다. 
  1. 뷰를 하위 뷰로 나누기
- 2. 뷰가 꼭 필요한 종속성만을 갖게 하기 
+- 뷰를 하나의 뷰로 작성한다면 그에 필요한 데이터 값이 변경됨에 따라 뷰가 다시 그려지게 됩니다. 예를 들어 10개의 버튼이 있으면 각 버튼이 눌릴 때마다 각각의 버튼에 해당하는 뷰만 다시 그려지게 할 수 있지만 하나의 전체 뷰가 다시 그려지게 되면 성능의 차이가 나게 될 것입니다.
+- 다음과 같이 데이터가 바뀔 때마다 상관없는 뷰가 다시 그려지는 것을 막고자 했습니다.
+      
+<img src="https://github.com/ryuchanghwi/SparkleApp/assets/78063938/1dc8071f-9696-4d95-8a3c-cddac0e8ef90" width=200></img>&nbsp;&nbsp;
+
+- 아래의 코드와 같이 하위 컨테이너 뷰로 나누게 되면 상위 뷰의 데이터가 다시 그려지는 것과 별개로 다시 뷰가 그려지지 않기 떄문에 성능 향상을 얻을 수 있습니다. 
+    
+``` swift
+struct TimerTimeTextView: View {
+    // MARK: - Property
+    let text: String
+    // MARK: - UI Property
+    var body: some View {
+        Text(text)
+            .font(Font(SDSFont.body1.font))
+            .foregroundColor(Color(.gray600))
+            .background(.random)
+    }
+}
+```
+ 2. 뷰가 꼭 필요한 종속성만을 갖게 하기
+- 다음과 같은 코드를 통해 종속성을 체크하고 있습니다. 
+``` swift
+let _ = Self._printChanges()
+```
+
+
+<img src="https://github.com/ryuchanghwi/SparkleApp/assets/78063938/9874471d-ec02-4c4c-9c95-2c3cef06c6cc" width=200></img>&nbsp;&nbsp;
+
+- ObservableObject에 종속성을 가지고 있는 경우 타이머가 흐름에 따라 데이터가 변화되는 것을 알 수 있었습니다.
+``` swift
+  TimerProgressView(remainingTime: timerData.remainingTime, totalTime: timerData.totalTime, isTimerRunning: timerData.isTimerRunning)
+     .padding(.horizontal, 24)
+     .padding(.top, 32)
+```
+- 다음과 같이 뷰가 ObservableObject에 종속성을 가지는 것이 아니라 필요한 데이터만을 가지게 됨으로써 업데이트 횟수를 줄일 수 있었습니다.
 
 # 주요 화면 및 기능
 
