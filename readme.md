@@ -153,8 +153,11 @@ struct BattleHistoryItemViewData {
 }
 ```
 
-# Trouble Shooting
-
+# ⚠️Trouble Shooting
+### 1.[SwiftUI View의 성능 향상을 위한 종속성 최소화를 위한 고민](https://declan.tistory.com/89)
+#### 문제점
+처음 디자인 시스템을 구축할 때 새로운 디자인이 생길 수 있다는 가능성을 배제한 채 작업을 진행한 결과 수정에 어려운 문제점 존재.
+#### 해결 방안
 # 주요 화면 및 기능
 
 # Commit message
