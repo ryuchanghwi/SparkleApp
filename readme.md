@@ -196,6 +196,9 @@ let _ = Self._printChanges()
      .padding(.top, 32)
 ```
 - 다음과 같이 뷰가 ObservableObject에 종속성을 가지는 것이 아니라 필요한 데이터만을 가지게 됨으로써 업데이트 횟수를 줄일 수 있었습니다.
+  
+
+### 2. UIKit에서 SwiftUI를 사용할 때 주의할 점
 
 # 주요 화면 및 기능
 
