@@ -154,10 +154,14 @@ struct BattleHistoryItemViewData {
 ```
 
 # ⚠️Trouble Shooting
-### 1.[SwiftUI View의 성능 향상을 위한 종속성 최소화를 위한 고민](https://declan.tistory.com/89)
+### [1.SwiftUI View의 성능 향상을 위한 종속성 최소화를 위한 고민](https://declan.tistory.com/89)
 #### 문제점
-처음 디자인 시스템을 구축할 때 새로운 디자인이 생길 수 있다는 가능성을 배제한 채 작업을 진행한 결과 수정에 어려운 문제점 존재.
+SwiftUI를 사용하면서 화면이 매끄럽지 않게 느껴지는 경우를 종종 발견함. 이에 따라 SwiftUI의 성능 향상을 위한 고민의 필요성을 느낌
 #### 해결 방안
+두 가지 방법으로 해결하고자 했습니다. 
+- 1. 뷰를 하위 뷰로 나누기
+- 2. 뷰가 꼭 필요한 종속성만을 갖게 하기 
+
 # 주요 화면 및 기능
 
 # Commit message
