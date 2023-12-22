@@ -25,7 +25,19 @@
 
 ## Domain
 > Entity
-- ㅇ
+- 서비스에 쓰이는 데이터를 정의합니다. 서버와의 소통 오류로 런타임에러를 막기 위해 `옵셔널`로 처리했습니다. 
+``` swift
+struct BattleHistoryResultDTO: Codable {
+    let roundGameId: Int?
+    let date: String?
+    let result: String?
+    let title: String?
+    let image: String?
+    let winner: String?
+    let myMission: MyMission
+    let partnerMission: PartnerMission
+}
+```
 > UseCase
 - ㅇ
 > Repository Interface
