@@ -191,6 +191,7 @@ let _ = Self._printChanges()
 <img src="https://github.com/ryuchanghwi/SparkleApp/assets/78063938/9874471d-ec02-4c4c-9c95-2c3cef06c6cc" width=200></img>&nbsp;&nbsp;
 
 - ObservableObject에 종속성을 가지고 있는 경우 타이머가 흐름에 따라 데이터가 변화되는 것을 알 수 있었습니다.
+
 `종속성을 최소화 하면서 개선한 코드`
 ``` swift
   TimerProgressView(remainingTime: timerData.remainingTime, totalTime: timerData.totalTime, isTimerRunning: timerData.isTimerRunning)
