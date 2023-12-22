@@ -28,7 +28,6 @@
 		36012F5F2A55D0A0006B8A39 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 36012F5E2A55D0A0006B8A39 /* Kingfisher */; };
 		36012F622A55D0F4006B8A39 /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = 36012F612A55D0F4006B8A39 /* Sentry */; };
 		36012F652A55D155006B8A39 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 36012F642A55D155006B8A39 /* KakaoSDK */; };
-		361FA3252A6012A600C3BBFD /* SDSKit in Frameworks */ = {isa = PBXBuildFile; productRef = 361FA3242A6012A600C3BBFD /* SDSKit */; };
 		361FA3282A60193B00C3BBFD /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361FA3272A60193B00C3BBFD /* HomeRepository.swift */; };
 		361FA32B2A601A4100C3BBFD /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361FA32A2A601A4100C3BBFD /* Config.swift */; };
 		361FA32E2A601D1B00C3BBFD /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361FA32D2A601D1B00C3BBFD /* NetworkResult.swift */; };
@@ -205,6 +204,7 @@
 		A5C6D3862ACD606500C01CA9 /* BattleResultViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C6D3852ACD606500C01CA9 /* BattleResultViewData.swift */; };
 		A5F26AB02B09EF870026BB58 /* BattleMemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F26AAF2B09EF870026BB58 /* BattleMemoView.swift */; };
 		A5F26AB22B09F0FB0026BB58 /* BattleMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F26AB12B09F0FB0026BB58 /* BattleMemoViewController.swift */; };
+		A5FEB8892B35676600B86072 /* SDSKit in Frameworks */ = {isa = PBXBuildFile; productRef = A5FEB8882B35676600B86072 /* SDSKit */; };
 		F80916352ADC276600237AA3 /* NickNameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80916342ADC276600237AA3 /* NickNameInputView.swift */; };
 		F80916372ADC27C300237AA3 /* NickNameViewLogoutAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80916362ADC27C300237AA3 /* NickNameViewLogoutAlert.swift */; };
 		F80916392ADC281800237AA3 /* QnAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80916382ADC281700237AA3 /* QnAView.swift */; };
@@ -416,12 +416,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5FEB8892B35676600B86072 /* SDSKit in Frameworks */,
 				36012F622A55D0F4006B8A39 /* Sentry in Frameworks */,
 				7E64995F2A650C4800B2F86C /* CHTCollectionViewWaterfallLayoutObjC in Frameworks */,
 				36012F5F2A55D0A0006B8A39 /* Kingfisher in Frameworks */,
 				36012F5C2A55D08E006B8A39 /* Alamofire in Frameworks */,
 				A500A4482AFB54F300B8593A /* SkeletonView in Frameworks */,
-				361FA3252A6012A600C3BBFD /* SDSKit in Frameworks */,
 				7E64995D2A650C4800B2F86C /* CHTCollectionViewWaterfallLayout in Frameworks */,
 				36012F562A55D06C006B8A39 /* SnapKit in Frameworks */,
 				36012F592A55D07D006B8A39 /* Then in Frameworks */,
@@ -1707,10 +1707,10 @@
 				36012F5E2A55D0A0006B8A39 /* Kingfisher */,
 				36012F612A55D0F4006B8A39 /* Sentry */,
 				36012F642A55D155006B8A39 /* KakaoSDK */,
-				361FA3242A6012A600C3BBFD /* SDSKit */,
 				7E64995C2A650C4800B2F86C /* CHTCollectionViewWaterfallLayout */,
 				7E64995E2A650C4800B2F86C /* CHTCollectionViewWaterfallLayoutObjC */,
 				A500A4472AFB54F300B8593A /* SkeletonView */,
+				A5FEB8882B35676600B86072 /* SDSKit */,
 			);
 			productName = Uni;
 			productReference = 36012F0C2A55A9F4006B8A39 /* Uni.app */;
@@ -1747,9 +1747,9 @@
 				36012F5D2A55D0A0006B8A39 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				36012F602A55D0F4006B8A39 /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
 				36012F632A55D155006B8A39 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
-				361FA3232A6012A600C3BBFD /* XCRemoteSwiftPackageReference "iOS-SDS-United" */,
 				7E64995B2A650C4800B2F86C /* XCRemoteSwiftPackageReference "CHTCollectionViewWaterfallLayout" */,
 				A500A4462AFB54F300B8593A /* XCRemoteSwiftPackageReference "SkeletonView" */,
+				A5FEB8872B35676600B86072 /* XCRemoteSwiftPackageReference "iOS-SDS-United" */,
 			);
 			productRefGroup = 36012F0D2A55A9F4006B8A39 /* Products */;
 			projectDirPath = "";
@@ -2267,14 +2267,6 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		361FA3232A6012A600C3BBFD /* XCRemoteSwiftPackageReference "iOS-SDS-United" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/U-is-Ni-in-Korea/iOS-SDS-United";
-			requirement = {
-				kind = exactVersion;
-				version = 1.1.4;
-			};
-		};
 		7E64995B2A650C4800B2F86C /* XCRemoteSwiftPackageReference "CHTCollectionViewWaterfallLayout" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/chiahsien/CHTCollectionViewWaterfallLayout";
@@ -2286,6 +2278,14 @@
 		A500A4462AFB54F300B8593A /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		A5FEB8872B35676600B86072 /* XCRemoteSwiftPackageReference "iOS-SDS-United" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/U-is-Ni-in-Korea/iOS-SDS-United.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;
@@ -2324,11 +2324,6 @@
 			package = 36012F632A55D155006B8A39 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
 			productName = KakaoSDK;
 		};
-		361FA3242A6012A600C3BBFD /* SDSKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 361FA3232A6012A600C3BBFD /* XCRemoteSwiftPackageReference "iOS-SDS-United" */;
-			productName = SDSKit;
-		};
 		7E64995C2A650C4800B2F86C /* CHTCollectionViewWaterfallLayout */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7E64995B2A650C4800B2F86C /* XCRemoteSwiftPackageReference "CHTCollectionViewWaterfallLayout" */;
@@ -2343,6 +2338,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A500A4462AFB54F300B8593A /* XCRemoteSwiftPackageReference "SkeletonView" */;
 			productName = SkeletonView;
+		};
+		A5FEB8882B35676600B86072 /* SDSKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5FEB8872B35676600B86072 /* XCRemoteSwiftPackageReference "iOS-SDS-United" */;
+			productName = SDSKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
