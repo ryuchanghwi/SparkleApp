@@ -166,7 +166,8 @@ SwiftUI를 사용하면서 화면이 매끄럽지 않게 느껴지는 경우를 
 <img src="https://github.com/ryuchanghwi/SparkleApp/assets/78063938/1dc8071f-9696-4d95-8a3c-cddac0e8ef90" width=200></img>&nbsp;&nbsp;
 
 - 아래의 코드와 같이 하위 컨테이너 뷰로 나누게 되면 상위 뷰의 데이터가 다시 그려지는 것과 별개로 다시 뷰가 그려지지 않기 떄문에 성능 향상을 얻을 수 있습니다. 
-    
+
+`하위 뷰 분리로 개선한 코드`
 ``` swift
 struct TimerTimeTextView: View {
     // MARK: - Property
@@ -190,6 +191,7 @@ let _ = Self._printChanges()
 <img src="https://github.com/ryuchanghwi/SparkleApp/assets/78063938/9874471d-ec02-4c4c-9c95-2c3cef06c6cc" width=200></img>&nbsp;&nbsp;
 
 - ObservableObject에 종속성을 가지고 있는 경우 타이머가 흐름에 따라 데이터가 변화되는 것을 알 수 있었습니다.
+`종속성을 최소화 하면서 개선한 코드`
 ``` swift
   TimerProgressView(remainingTime: timerData.remainingTime, totalTime: timerData.totalTime, isTimerRunning: timerData.isTimerRunning)
      .padding(.horizontal, 24)
