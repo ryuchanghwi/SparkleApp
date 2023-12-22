@@ -21,7 +21,7 @@
 # Architecture
 ## MVC -> MVVM + Clean Architecture(진행 중)
 - 잦은 기획 변경 및 유지보수 등 업무 효율을 높이기 위해 `클린 아키텍처`를 도입중입니다.
-<img width="1152" src="">
+<img width="1152" src="https://github.com/U-is-Ni-in-Korea/iOS-United/assets/78063938/d24e3dc0-c3ca-421d-99da-cc1cfcba6e71">
 
 ## Domain
 > Entity
