@@ -39,7 +39,22 @@ struct BattleHistoryResultDTO: Codable {
 }
 ```
 > UseCase
-- ㅇ
+- Entity가 사용되는 시나리오를 정의합니다. 
+``` swift
+protocol BattleHistoryResultUseCaseProtocol {
+    func execute() -> AnyPublisher<[BattleHistoryResultDTO], ErrorType>
+}
+
+final class BattleHistoryResultUseCase: BattleHistoryResultUseCaseProtocol {
+    private let battleHistoryResultRepository: BattleHistoryResultRepositoryInterface
+    init(battleHistoryResultRepository: BattleHistoryResultRepositoryInterface) {
+        self.battleHistoryResultRepository = battleHistoryResultRepository
+    }
+    func execute() -> AnyPublisher<[BattleHistoryResultDTO], ErrorType> {
+        return self.battleHistoryResultRepository.data()
+    }
+}
+```
 > Repository Interface
 - ㅇ
 
