@@ -250,18 +250,6 @@ SwiftUI를 사용하면서 간헐적으로 화면이 나타나지 않는 문제 
 <img src="https://github.com/workoutDone/WorkoutDone/assets/78063938/6499da78-a979-4c00-a97f-dffa8d99d3eb" width=200>
 </div>
 
-> 📈 몸무게, 체지방량, 골격근량 입력 및 분석 플로우 - 날마다 입력한 신체 정보를 차트로 한 눈에 비교할 수 있어요.
-<div align=leading>
-<img src="https://github.com/workoutDone/WorkoutDone/assets/78063938/882f39dd-fbd4-4c44-b0ca-62dac80456ff" width=200>
-</div>
-
-> 📸 오운완 사진 촬영 및 저장 플로우 - 날마다 사진을 찍고 저장해 몸의 변화를 한 눈에 비교할 수 있어요.
-
-<div align=leading>
-<img src="https://github.com/workoutDone/WorkoutDone/assets/78063938/8fbdb630-9457-4321-9372-8df07ba5a66b" width=200>
-</div>
-
-
 
 > 🎞️ 승부 생성 - 커플이 함께 할 수 있는 게임을 생성할 수 있어요. 이미 상대가 게임을 생성했다면 생성할 수 없다는 알람이 나타나요.
 <div align=leading>
@@ -275,14 +263,18 @@ SwiftUI를 사용하면서 간헐적으로 화면이 나타나지 않는 문제 
     <img src="https://github.com/ryuchanghwi/SparkleApp/assets/78063938/fd1cb42e-4f3b-4a27-8a8a-edb8f018df65" width=200>
 </div>
 
+> 🎫 소원권 사용 - 승부에서 이겼다면 소원권을 사용할 수 있어요.
+<div align=leading>
+<img src="https://github.com/ryuchanghwi/SparkleApp/assets/78063938/310ef43a-36ec-4269-a61a-e78c816dd852" width=200>
+</div>
 
 
-> 💪 승부 히스토리 플로우 - 커플과 함께 한 승부의 기록들을 확인할 수 있어요
+> 📓 승부 히스토리 플로우 - 커플과 함께 한 승부의 기록들을 확인할 수 있어요
 <div align=leading>
 <img src="https://github.com/ryuchanghwi/SparkleApp/assets/78063938/1c59e30d-bc3a-4db9-8cdf-42b80fdfcc97" width=200>
 </div>
 
-> 🏋️ 마이페이지 플로우 - 내 정보를 수정할 수 있고 로그아웃, 커플 연결 끊기, 계정 탈퇴를 할 수 있어요.
+> ✏️ 마이페이지 플로우 - 내 정보를 수정할 수 있고 로그아웃, 커플 연결 끊기, 계정 탈퇴를 할 수 있어요.
 <div align=leading>
 <img src="https://github.com/ryuchanghwi/SparkleApp/assets/78063938/68f2c5c3-1dfd-4897-8ecc-80daa717ca45" width=200>
 </div>
