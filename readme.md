@@ -123,7 +123,39 @@ struct BattleHistoryDetailViewModel {
 ```
 - SwiftUI의 ViewModel은 `ObservableObject`와 `@Published`프로퍼티 패턴를 활용해 Binding합니다.
 ``` swift
-
+final class MyPageViewModel: ObservableObject {
+    @Published var myPageName: String = ""
+    @Published var myPageDate: String = ""
+    @Published var startDate: String = ""
+    private var cancellables: Set<AnyCancellable> = []
+    private let myPageGetUseCase: MyPageGetUseCaseProtocol
+    private let navigationController: UINavigationController
+    private let viewController: UIViewController
+    init(myPageGetUseCase: MyPageGetUseCaseProtocol, navigationController: UINavigationController, viewController: UIViewController) {
+        self.myPageGetUseCase = myPageGetUseCase
+        self.navigationController = navigationController
+        self.viewController = viewController
+        getMyPageData()
+    }
+    // MARK: - Custom Method
+    func getMyPageData() {
+        myPageGetUseCase.excute().sink { [weak self] completion in
+            guard let self = self else { return }
+            switch completion {
+            case .failure(let errorType):
+                errorResponse(status: errorType)
+            case .finished:
+                break
+            }
+        } receiveValue: { [weak self] data in
+            guard let self = self else { return }
+            self.myPageDate = MyPageGetItemViewData(myPageGetItem: data).date
+            self.myPageName = MyPageGetItemViewData(myPageGetItem: data).name
+            self.startDate = data.startDate ?? ""
+        }
+        .store(in: &cancellables)
+    }
+}
 ```
 > ItemViewData
 - Entity를 View에서 쉽게 사용하기 위한 데이터로 변환하는 작업을 수행합니다.
