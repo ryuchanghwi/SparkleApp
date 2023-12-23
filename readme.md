@@ -263,18 +263,19 @@ SwiftUI를 사용하면서 간헐적으로 화면이 나타나지 않는 문제 
 
 
 
-> 🎞️ 승부 생성 - 커플이 함께 할 수 있는 게임을 생성할 수 있어요. 이미 상대가 게임을 생성했다면 생성할 수 없다는 알람이 나타나요
+> 🎞️ 승부 생성 - 커플이 함께 할 수 있는 게임을 생성할 수 있어요. 이미 상대가 게임을 생성했다면 생성할 수 없다는 알람이 나타나요.
 <div align=leading>
   <img src="https://github.com/ryuchanghwi/SparkleApp/assets/78063938/77e4abcf-a234-4d1c-b4f8-7f0cb43b11f7" width=200>
     <img src="https://github.com/ryuchanghwi/SparkleApp/assets/78063938/02c21c41-231a-4161-9340-818483acd1af" width=200>
 </div>
 
-> 🎞️ 승부 결과 확인 - 갤러리(전체 권한, 선택 권한)에서 가져와 몸의 변화를 한 눈에 비교할 수 있어요.
+> 🎞️ 승부 결과 확인 - 상대방의 결과을 비교하여 승패를 정하고 아직 승부가 나지 않았다면 알람이 나타나요.
 <div align=leading>
-  <img src="https://github.com/workoutDone/WorkoutDone/assets/78063938/7df2e2a9-d367-4b13-b8f4-3533c2b3bdd0" width=200>
-    <img src="https://github.com/workoutDone/WorkoutDone/assets/78063938/c0aedb59-4c24-417f-8953-115e8b4514ae" width=200>
-  <img src="https://github.com/workoutDone/WorkoutDone/assets/78063938/05b0c1ac-52ef-40c0-89b6-0781d54a7775" width=200>
+  <img src="https://github.com/ryuchanghwi/SparkleApp/assets/78063938/abb016a4-6b1e-48b3-baf5-891e90e30a92" width=200>
+    <img src="https://github.com/ryuchanghwi/SparkleApp/assets/78063938/fd1cb42e-4f3b-4a27-8a8a-edb8f018df65" width=200>
 </div>
+
+
 
 > 💪 승부 히스토리 플로우 - 커플과 함께 한 승부의 기록들을 확인할 수 있어요
 <div align=leading>
@@ -283,9 +284,9 @@ SwiftUI를 사용하면서 간헐적으로 화면이 나타나지 않는 문제 
 
 > 🏋️ 마이페이지 플로우 - 내 정보를 수정할 수 있고 로그아웃, 커플 연결 끊기, 계정 탈퇴를 할 수 있어요.
 <div align=leading>
-<img src="https://github.com/workoutDone/WorkoutDone/assets/78063938/1b2d3003-a99a-4bac-987d-7439bad022b3" width=200>
-  <img src="https://github.com/workoutDone/WorkoutDone/assets/78063938/bd8b9821-47ff-4769-bc94-e4afb84fb782" width=200>
+<img src="https://github.com/ryuchanghwi/SparkleApp/assets/78063938/68f2c5c3-1dfd-4897-8ecc-80daa717ca45" width=200>
 </div>
+
 
 # Commit message
 
