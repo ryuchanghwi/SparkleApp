@@ -18,7 +18,9 @@
 - 기술 스택
     - iOS : UIKit, SwiftUI, Combine, SwiftLint 
     - Deployment Target : iOS 15.0
-  
+
+<br>
+
 # Architecture
 ## MVC -> MVVM + Clean Architecture(진행 중)
 - 잦은 기획 변경 및 유지보수 등 업무 효율을 높이기 위해 `클린 아키텍처`를 도입중입니다.
@@ -185,6 +187,8 @@ struct BattleHistoryItemViewData {
 }
 ```
 
+<br>
+
 # ⚠️Trouble Shooting
 ### [1.SwiftUI View의 성능 향상을 위한 종속성 최소화](https://declan.tistory.com/89)
 ### 문제점
@@ -243,6 +247,9 @@ SwiftUI를 사용하면서 간헐적으로 화면이 나타나지 않는 문제 
 
 
 ### 해결 방안
+
+
+<br>
 
 # 📱 주요 화면 및 기능
 
