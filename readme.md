@@ -1,4 +1,3 @@
-![한판승부 생성](https://github.com/ryuchanghwi/SparkleApp/assets/78063938/c3dcaedc-df9c-4623-ab92-f7ff51760a3a)
 
 # 프로젝트 소개
 - 연인 간 미션 승부를 통한 소원권 내기 서비스 앱
