@@ -247,7 +247,8 @@ SwiftUI를 사용하면서 간헐적으로 화면이 나타나지 않는 문제 
 
 > 🔖 로그인 플로우 - 카카오, 애플로 로그인을 할 수 있어요. 커플이 연결되어 있다면 홈 화면, 없다면 커플을 연결하는 플로우로 넘어가요.
 <div align=leading>
-<img src="https://github.com/workoutDone/WorkoutDone/assets/78063938/6499da78-a979-4c00-a97f-dffa8d99d3eb" width=200>
+<img src="https://github.com/ryuchanghwi/SparkleApp/assets/78063938/6972688f-2406-4282-b111-3465bd0dbcc5" width=200>
+<img src="https://github.com/ryuchanghwi/SparkleApp/assets/78063938/75592171-346c-4f74-8917-392d6ac55ede" width=200>
 </div>
 
 
