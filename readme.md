@@ -2,6 +2,7 @@
 # 프로젝트 소개
 - 연인 간 미션 승부를 통한 소원권 내기 서비스 앱
 - 커플이 함께 사용하는 앱이기 때문에 두 명이 서로 연결해서 사용하는 앱입니다.
+- 해당 앱의 디자인 시스템을 위해 SPM을 활용했습니다. [디자인 시스템 리드미 링크](https://github.com/ryuchanghwi/SparkleDesignSystem)
 
 🔗 [앱 다운로드 링크](https://apps.apple.com/kr/app/sparkle-%EC%8A%A4%ED%8C%8C%ED%81%B4-%EC%97%B0%EC%95%A0%EC%97%90-%EC%83%88%EB%A1%9C%EC%9A%B4-%EC%A7%9C%EB%A6%BF%ED%95%A8%EC%9D%B4-%ED%95%84%EC%9A%94%ED%95%A0%EB%95%8C/id6451497605)
 
