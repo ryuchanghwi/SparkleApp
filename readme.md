@@ -236,7 +236,9 @@ let _ = Self._printChanges()
 ```
 - 다음과 같이 뷰가 ObservableObject에 종속성을 가지는 것이 아니라 필요한 데이터만을 가지게 됨으로써 업데이트 횟수를 줄일 수 있었습니다.
   
-
+# Todo
+- 꾸준히 MVC패턴에서 MVVM + Clean Architecture 패턴으로 유지보수를 할 예정입니다. 
+- 각각 분리된 레이어를 테스트할 수 있는 방법을 고민해보고 싶습니다. 
 
 
 <br>
