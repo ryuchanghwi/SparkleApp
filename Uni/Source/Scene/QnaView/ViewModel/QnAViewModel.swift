@@ -64,5 +64,4 @@ final class QnAViewModel: ObservableObject {
             self.navigationController.present(viewControllerToPresent, animated: true, completion: nil)
         }
     }
-    
 }

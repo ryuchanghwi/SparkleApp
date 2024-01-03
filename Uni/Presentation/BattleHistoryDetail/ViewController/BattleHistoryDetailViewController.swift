@@ -4,10 +4,10 @@ import Combine
 import Then
 import SDSKit
 
-final class BattleHistoryDetailViewController: BaseViewController, HistoryDetailViewDelegate {
+final class BattleHistoryDetailViewController: BaseViewController {
     // MARK: - Property
     private var historyDetailData: BattleHistoryResultDTO?
-    private let viewModel = BattleHistoryDetailViewModel()
+    private lazy var viewModel = BattleHistoryDetailViewModel()
     private lazy var loadViewSubject = PassthroughSubject<BattleHistoryResultDTO, Never>()
     private lazy var input = BattleHistoryDetailViewModel.Input(viewLoad: loadViewSubject.eraseToAnyPublisher())
     private lazy var output = viewModel.transform(input: input)
@@ -17,13 +17,12 @@ final class BattleHistoryDetailViewController: BaseViewController, HistoryDetail
     override func loadView() {
         super.loadView()
         historyDetailView = HistoryDetailView(frame: self.view.frame)
-        historyDetailView.delegate = self
         self.view = historyDetailView
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        historyDetailViewDidTapBackButton()
         setupBinding()
+        historyDetailViewDidTapBackButton()
     }
     // MARK: - Setting
     private func setupBinding() {

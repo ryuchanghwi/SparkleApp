@@ -1,69 +1,39 @@
-import UIKit
-
+import SwiftUI
 import SDSKit
-import Then
+import SafariServices
 
-final class MyPageView: UIView {
+struct MyPageView: View {
+    // MARK: - Property
+    @ObservedObject var viewModel: MyPageViewModel
     // MARK: - UI Property
-    let settingViewNavi = SDSNavigationBar(hasBack: true, hasTitleItem: true, navigationTitle: "마이페이지")
-    let profileView = MyPageProfileView()
-    let myPageTableView = UITableView().then {
-        $0.register(MyPageTableViewCell.self, forCellReuseIdentifier: MyPageTableViewCell.reuseIdentifier)
-        $0.rowHeight = 56
-        $0.separatorStyle = .none
-        $0.isScrollEnabled = false
-    }
-    private let settingTableHeaderView = MyPageHeaderView(title: "서비스 이용")
-    // MARK: - Life Cycle
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setLayout()
-        setStyle()
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    // MARK: - Setting
-    func setLayout() {
-        addSubviews([settingViewNavi, profileView, myPageTableView, settingTableHeaderView])
-
-        settingViewNavi.snp.makeConstraints {
-            $0.top.equalTo(safeAreaLayoutGuide)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(52)
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            SDSNavigationView(style: .leftPopButtonMiddleTitle(title: "마이페이지", action: {
+                viewModel.popViewController()
+            }))
+            MyPageSubTitleView(title: "내 정보")
+            MyPageMyInfoView(name: viewModel.myPageName, date: viewModel.myPageDate) {
+                let editProfileViewController = EditProfileViewController()
+                editProfileViewController.dataBind(userName: viewModel.myPageName, startDate: viewModel.startDate)
+                viewModel.pushViewController(viewController: editProfileViewController)
+            }
+            MyPageSubTitleView(title: "서비스 이용")
+            MyPageServiceButton(title: "계정") {
+                viewModel.pushViewController(viewController: AccountViewController())
+            }
+            MyPageServiceButton(title: "서비스 이용약관") {
+                viewModel.safariPresent(link: "https://sparkle-uni.notion.site/5852b2d5f5b24121a4b28b93a8d2e5b6?pvs=4")
+            }
+            MyPageServiceButton(title: "개인정보 처리 방침") {
+                viewModel.safariPresent(link: "https://sparkle-uni.notion.site/aebe71410014461d85c96851bae1d5cb?pvs=4")
+            }
+            MyPageServiceButton(title: "오픈소스 라이브러리") {
+                viewModel.safariPresent(link: "https://sparkle-uni.notion.site/00c8ee4d810e411395c7ff26d22dcffd?pvs=4")
+            }
+            Spacer()
         }
-        profileView.snp.makeConstraints {
-            $0.top.equalTo(settingViewNavi.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(148)
+        .task {
+            viewModel.getMyPageData()
         }
-        myPageTableView.snp.makeConstraints {
-            $0.top.equalTo(settingTableHeaderView.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(self.safeAreaLayoutGuide)
-        }
-        settingTableHeaderView.snp.makeConstraints {
-            $0.height.equalTo(34)
-            $0.top.equalTo(profileView.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
-        }
-    }
-    func setStyle() {
-        self.backgroundColor = .gray000
-    }
-    // MARK: - Custom Method
-    func bindData(userName: String, dDay: String) {
-        self.profileView.userNameLabel.text = userName
-        self.profileView.dDayLabel.text = formatDateString(rawValue: dDay)
-    }
-    func formatDateString(rawValue: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        guard let date = dateFormatter.date(from: rawValue) else { return rawValue }
-        dateFormatter.dateFormat = "yyyy.MM.dd (EEEE)"
-        dateFormatter.locale = Locale(identifier: "ko_KR")
-        let formattedDateString = dateFormatter.string(from: date)
-        let shortenedDateString = formattedDateString.replacingOccurrences(of: "요일", with: "")
-          return shortenedDateString
     }
 }

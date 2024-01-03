@@ -4,13 +4,7 @@ import SDSKit
 import SnapKit
 import Then
 
-protocol HistoryDetailViewDelegate: AnyObject {
-    func historyDetailViewDidTapBackButton()
-}
-
 final class HistoryDetailView: UIView {
-    // MARK: - Property
-    weak var delegate: HistoryDetailViewDelegate?
     // MARK: - UI Property
     let navigationBar = SDSNavigationBar(hasBack: true, hasTitleItem: true, navigationTitle: "승부 히스토리")
     var historyDetailResultView = HistoryDetailResultView()
@@ -47,9 +41,5 @@ final class HistoryDetailView: UIView {
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(176)
         }
-    }
-    // MARK: - Custom Method
-    func didTapBackButton() {
-        delegate?.historyDetailViewDidTapBackButton()
     }
 }

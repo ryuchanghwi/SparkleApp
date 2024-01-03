@@ -6,7 +6,7 @@ final class BattleProgressViewController: BaseViewController {
     // MARK: - Property
     let timerViewData: TimerData
     private var roundId: Int = 0
-    private let battleHistoryViewData = BattleProgressViewModel(roundBattleMissionUseCase: RoundBattleMissionUseCase(roundBattleMissionRepository: RoundBattleMissionRepository(service: GetServiceCombine.shared)))
+    private lazy var battleProgressViewModel = BattleProgressViewModel(roundBattleMissionUseCase: RoundBattleMissionUseCase(roundBattleMissionRepository: RoundBattleMissionRepository(service: GetServiceCombine.shared)), homeGetUseCase: HomeGetUseCase(homeGetRepository: HomeGetRepository(service: GetServiceCombine.shared)), viewController: self, navigationController: self.navigationController!)
     private var battleRepository = BattleRepository()
     private var homeRepository = HomeRepository()
     private var battleData: RoundBattleDataModel?
@@ -23,17 +23,15 @@ final class BattleProgressViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getRoundMissionId()
-        addNavigationButtonAction()
         setConfig()
         setLayout()
-        addNavigationButtonAction()
         addMissionCompleteButtonAction()
         addmissionFailureButtonAction()
         toolButtonAction()
     }
     // MARK: - Setting
     override func setConfig() {
-        battleHistoryHostingController = UIHostingController(rootView: BattleProgressView(data: battleHistoryViewData))
+        battleHistoryHostingController = UIHostingController(rootView: BattleProgressView(viewModel: battleProgressViewModel, timerViewData: timerViewData))
         self.addChild(battleHistoryHostingController)
         view.addSubview(battleHistoryHostingController.view)
         battleHistoryHostingController.didMove(toParent: self)
@@ -44,19 +42,8 @@ final class BattleProgressViewController: BaseViewController {
         }
     }
     // MARK: - Action Helper
-    private func addNavigationButtonAction() {
-        battleHistoryViewData.dismissButtonTapPublisher.sink { [weak self] _ in
-            self?.dismiss(animated: true)
-        }
-        .store(in: &cancellables)
-    }
     private func toolButtonAction() {
-        battleHistoryViewData.memoButtonTapSubject.sink { [weak self] _ in
-            let battleMemoViewController = BattleMemoViewController()
-            self?.navigationController?.pushViewController(battleMemoViewController, animated: true)
-        }
-        .store(in: &cancellables)
-        battleHistoryViewData.timerButtonTapSubejct.sink { [weak self] _ in
+        battleProgressViewModel.timerButtonTapSubejct.sink { [weak self] _ in
             guard let self = self else { return }
             let battleTimerViewController = TimerViewController(timerViewData: timerViewData)
             self.navigationController?.pushViewController(battleTimerViewController, animated: true)
@@ -65,7 +52,7 @@ final class BattleProgressViewController: BaseViewController {
         .store(in: &cancellables)
     }
     private func addMissionCompleteButtonAction() {
-        battleHistoryViewData.missionCompleteButtonTapSubject.sink { [weak self] _ in
+        battleProgressViewModel.missionCompleteButtonTapSubject.sink { [weak self] _ in
             guard let self = self else { return }
             self.view.showIndicator()
             self.battleRepository.patchRoundGameData(state: true,
@@ -86,7 +73,7 @@ final class BattleProgressViewController: BaseViewController {
         .store(in: &cancellables)
     }
     private func addmissionFailureButtonAction() {
-        battleHistoryViewData.missionFailureButtonTapSubject.sink { [weak self] _ in
+        battleProgressViewModel.missionFailureButtonTapSubject.sink { [weak self] _ in
             guard let self = self else { return }
             self.view.showIndicator()
             self.battleRepository.patchRoundGameData(state: false,
@@ -106,12 +93,6 @@ final class BattleProgressViewController: BaseViewController {
         }.store(in: &cancellables)
     }
     // MARK: - Custom Method
-    private func getRoundMissionData(roundId: Int) {
-        battleRepository.getRoundGameData(roundId: roundId) { [weak self] data in
-            guard let strongSelf = self else { return }
-            strongSelf.battleHistoryViewData.rountBattle = data
-        }
-    }
     private func getRoundMissionId() {
         self.view.showIndicator()
         homeRepository.getHomeData { [weak self] result in
@@ -120,7 +101,7 @@ final class BattleProgressViewController: BaseViewController {
             case .success(let data):
                 if let roundId = data.roundGameId {
                     self.roundId = roundId
-                    self.getRoundMissionData(roundId: roundId)
+//                    self.getRoundMissionData(roundId: roundId)
                     self.view.removeIndicator()
                 }
             case .failure(let error):
@@ -131,20 +112,10 @@ final class BattleProgressViewController: BaseViewController {
                     UserDefaultsManager.shared.delete(.userId)
                     UserDefaultsManager.shared.delete(.lastRoundId)
                     let navigationViewController = UINavigationController(rootViewController: LoginViewController())
-                    self.changeRootViewController(navigationViewController)
                 case .unknown:
                     self.view.removeIndicator()
                 }
             }
-        }
-    }
-    func changeRootViewController(_ viewControllerToPresent: UIViewController) {
-        if let window = UIApplication.shared.windows.first {
-            window.rootViewController = viewControllerToPresent
-            UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil)
-        } else {
-            viewControllerToPresent.modalPresentationStyle = .overFullScreen
-            self.present(viewControllerToPresent, animated: true, completion: nil)
         }
     }
 }

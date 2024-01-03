@@ -96,6 +96,8 @@ final class BattleHistoryResultViewController: BaseViewController {
         case .unknown:
             let navigationViewController = UINavigationController(rootViewController: LoginViewController())
             self.changeRootViewController(navigationViewController)
+        case .parsingError:
+            return 
         }
     }
 }
