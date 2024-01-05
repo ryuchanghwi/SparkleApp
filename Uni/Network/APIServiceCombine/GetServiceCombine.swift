@@ -3,7 +3,7 @@ import Combine
 import Alamofire
 import Sentry
 
-final class GetServiceCombine: GetServiceProtocol {
+final class GetServiceCombine {
     static let shared = GetServiceCombine()
     private let session: Session
     init(session: Session = Session.default) {

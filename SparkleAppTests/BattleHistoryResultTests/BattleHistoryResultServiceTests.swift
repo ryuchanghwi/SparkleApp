@@ -25,10 +25,7 @@ final class BattleHistoryResultServiceTests: XCTestCase {
         MockURLProtocol.error = nil
     }
     func test_승부히스토리서비스_조회성공_테스트() {
-        battleHistoryResult = [
-            BattleHistoryResultDTO(roundGameId: 753, date: "23.12.27", result: "WIN", title: "키워드 스무고개", image: "https://uni-sparkle.s3.ap-northeast-2.amazonaws.com/category/name%3Dtwenty+questions.png", winner: "빵빵아", myMission: MyMission(content: "에코백", result: "WIN", time: "20:58"), partnerMission: PartnerMission(content: "장미", result: "LOSE", time: "20:56")),
-            BattleHistoryResultDTO(roundGameId: 752, date: "23.12.26", result: "WIN", title: "키워드 스무고개", image: "https://uni-sparkle.s3.ap-northeast-2.amazonaws.com/category/name%3Dtwenty+questions.png", winner: "빵빵아", myMission: MyMission(content: "청소기", result: "WIN", time: "18:06"), partnerMission: PartnerMission(content: "텀블러", result: "WIN", time: "18:06"))
-        ]
+        battleHistoryResult = BattleHistoryResultConstants.battleHistoryResultData
         let jsonString = BattleHistoryResultConstants.battleHistoryResultJsonString
         MockURLProtocol.stubResponseData = jsonString.data(using: .utf8)
         let expectation = self.expectation(description: "승부 히스토리 서비스 조회 성공")
